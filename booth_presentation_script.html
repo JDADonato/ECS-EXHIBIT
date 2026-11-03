@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ECS Booth Presentation Script &amp; Evaluator Playbook — Team 4FRONT</title>
+  <style>
+    @page {
+      size: letter portrait;
+      margin: 14mm 14mm 14mm 14mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1e293b;
+      background: #ffffff;
+      line-height: 1.45;
+      font-size: 9.5pt;
+    }
+
+    /* Page container */
+    .page {
+      page-break-after: always;
+      position: relative;
+    }
+
+    .page:last-child {
+      page-break-after: avoid;
+    }
+
+    /* Header Banner */
+    .doc-header {
+      border-bottom: 2.5px solid #720101;
+      padding-bottom: 8px;
+      margin-bottom: 14px;
+    }
+
+    .doc-header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .inst-title {
+      font-size: 8.5pt;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #720101;
+    }
+
+    .doc-badge {
+      font-size: 7.5pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      background: #fef3c7;
+      color: #92400e;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid #fde68a;
+    }
+
+    .main-title {
+      font-size: 14pt;
+      font-weight: 900;
+      color: #0f172a;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+
+    .doc-meta {
+      font-size: 8pt;
+      color: #475569;
+      background: #fdfaf6;
+      border: 1px solid #eedecf;
+      border-radius: 5px;
+      padding: 5px 10px;
+      line-height: 1.35;
+    }
+
+    /* Section Headings */
+    .section-title {
+      font-size: 11pt;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #720101;
+      border-bottom: 1.5px solid #cbd5e1;
+      padding-bottom: 3px;
+      margin: 14px 0 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .section-timing {
+      font-size: 8pt;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+
+    .subtitle-note {
+      font-size: 8.5pt;
+      color: #64748b;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    /* Script Blocks */
+    .script-step {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-left: 3.5px solid #720101;
+      border-radius: 5px;
+      padding: 8px 11px;
+      margin-bottom: 9px;
+    }
+
+    .script-step.alt {
+      border-left-color: #d97706;
+    }
+
+    .script-step.tech {
+      border-left-color: #0284c7;
+    }
+
+    .step-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .step-name {
+      font-size: 8.5pt;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #0f172a;
+    }
+
+    .step-time {
+      font-size: 7.5pt;
+      font-weight: 700;
+      background: #f1f5f9;
+      color: #475569;
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    .action-pill {
+      display: inline-block;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1d4ed8;
+      font-size: 7.5pt;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .action-pill svg {
+      vertical-align: middle;
+      margin-right: 3px;
+    }
+
+    .dialogue-text {
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #1e293b;
+    }
+
+    .dialogue-text strong {
+      color: #720101;
+      font-weight: 800;
+    }
+
+    .pro-tip {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 5px;
+      padding: 6px 10px;
+      font-size: 8pt;
+      color: #166534;
+      margin: 8px 0;
+    }
+
+    .pro-tip strong {
+      color: #14532d;
+    }
+
+    /* Q&A Table */
+    .qa-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.5pt;
+      margin-top: 8px;
+    }
+
+    .qa-table th {
+      background: #f8fafc;
+      color: #0f172a;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 7.5pt;
+      letter-spacing: 0.05em;
+      padding: 6px 8px;
+      border: 1px solid #cbd5e1;
+      text-align: left;
+    }
+
+    .qa-table td {
+      padding: 6px 8px;
+      border: 1px solid #e2e8f0;
+      vertical-align: top;
+      line-height: 1.35;
+    }
+
+    .qa-q {
+      font-weight: 800;
+      color: #720101;
+      width: 32%;
+    }
+
+    .qa-a {
+      color: #334155;
+    }
+
+    /* Footer */
+    .doc-footer {
+      border-top: 1px solid #cbd5e1;
+      padding-top: 5px;
+      margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.5pt;
+      color: #64748b;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       PAGE 1: PART 1 - THE 60-SECOND ELEVATOR PITCH (Quick Walkby Script)
+       ========================================================================= -->
+  <div class="page">
+    <header class="doc-header">
+      <div class="doc-header-top">
+        <span class="inst-title">FEU Institute of Technology &bull; College of Computer Studies</span>
+        <span class="doc-badge">Official Booth Script &bull; Exhibit 2026</span>
+      </div>
+      <h1 class="main-title">Eloquente Catering System (ECS) with Decision Support System</h1>
+      <div class="doc-meta">
+        <strong>Authors:</strong> John Maverick M. Aquino &bull; Rafael Angelo P. Buscano &bull; John Darev A. Donato &bull; Tyron Jude G. Duran<br>
+        <strong>Adviser:</strong> Ms. Geliza Marie I. Alcober &bull; <strong>Industry Partner:</strong> Eloquente Catering Services &bull; <strong>Live Demo:</strong> 4front-ecs.local
+      </div>
+    </header>
+
+    <h2 class="section-title">
+      <span>Part 1: The 60-Second Elevator Pitch</span>
+      <span class="section-timing">&asymp; 1 Minute &bull; For Walkby Evaluators &amp; Casual Visitors</span>
+    </h2>
+    <p class="subtitle-note">
+      Use this when evaluators stop briefly and ask: <em>&ldquo;What is your project about?&rdquo;</em> Deliver with calm confidence, smiling, and pointing to the live website on your screen.
+    </p>
+
+    <!-- Pitch Step 1: Hook & Pain Point -->
+    <div class="script-step">
+      <div class="step-header">
+        <span class="step-name">1. The Real-World Bottleneck</span>
+        <span class="step-time">0:00 &ndash; 0:15</span>
+      </div>
+      <div class="action-pill">&bull; Eye contact with visitor &bull; Gesture to exhibit screen</div>
+      <div class="dialogue-text">
+        &ldquo;Good day! In traditional catering businesses like our partner, <strong>Eloquente Catering Services</strong>, booking events is still done manually through paper slips, unverified GCash screenshots, and phone calls. Worse, purchasing ingredients and scheduling banquet staff relies on pure guesswork &mdash; causing food waste or sudden service shortages.&rdquo;
+      </div>
+    </div>
+
+    <!-- Pitch Step 2: The Core Innovation -->
+    <div class="script-step alt">
+      <div class="step-header">
+        <span class="step-name">2. The Engineered Solution</span>
+        <span class="step-time">0:15 &ndash; 0:35</span>
+      </div>
+      <div class="action-pill">&bull; Action: Click "Roles" tab on Navbar &bull; Show 4-Stage Matrix</div>
+      <div class="dialogue-text">
+        &ldquo;We engineered <strong>ECS</strong>: an enterprise web platform that automates the entire catering lifecycle across 4 stages. Clients design custom banquets online with instant PayMongo cashless verification, while kitchen staff receive automated prep sheets &mdash; completely replacing manual order taking.&rdquo;
+      </div>
+    </div>
+
+    <!-- Pitch Step 3: The DSS Mathematical Punchline -->
+    <div class="script-step tech">
+      <div class="step-header">
+        <span class="step-name">3. The Analytics Core (DSS Live Demo)</span>
+        <span class="step-time">0:35 &ndash; 0:50</span>
+      </div>
+      <div class="action-pill">&bull; Action: Click "DSS" tab &bull; Drag Forecast Slider to +3 Months</div>
+      <div class="dialogue-text">
+        &ldquo;Our core innovation is a <strong>Decision Support System</strong> running 3 mathematical models: Linear Regression forecasts monthly sales growth with an <strong>R&sup2; of 0.892</strong> to guide bulk purchasing; Moving Averages predict guest headcount to assign banquet servers; and a 2-Pass Knapsack algorithm automatically builds a 5-course menu matching a client&rsquo;s budget with <strong>&8369;0 overrun risk</strong>.&rdquo;
+      </div>
+    </div>
+
+    <!-- Pitch Step 4: The Handout & QR Call to Action -->
+    <div class="script-step">
+      <div class="step-header">
+        <span class="step-name">4. Closing &amp; Interactive Invitation</span>
+        <span class="step-time">0:50 &ndash; 1:00</span>
+      </div>
+      <div class="action-pill">&bull; Action: Press "H" (Open Handout) or "Q" (Show Mobile QR Code)</div>
+      <div class="dialogue-text">
+        &ldquo;You can scan this QR code to test the live simulator right on your smartphone, or view our 1-page technical summary. Would you like a quick 3-minute walkthrough of the algorithm?&rdquo;
+      </div>
+    </div>
+
+    <div class="pro-tip">
+      <strong>Speaker Tip:</strong> If the evaluator nods or steps closer, immediately transition to <strong>Part 2 (The 4-Minute Full Walkthrough)</strong> on the next page!
+    </div>
+
+    <footer class="doc-footer">
+      <span>Team 4FRONT &bull; BSIT Business Analytics &bull; FEU Tech 2026</span>
+      <span>Page 1 of 3 &bull; Quick Elevator Script</span>
+    </footer>
+  </div>
+
+  <!-- =========================================================================
+       PAGE 2: PART 2 - THE 4-MINUTE COMPREHENSIVE WALKTHROUGH (Full Script)
+       ========================================================================= -->
+  <div class="page">
+    <header class="doc-header">
+      <div class="doc-header-top">
+        <span class="inst-title">FEU Institute of Technology &bull; College of Computer Studies</span>
+        <span class="doc-badge">Panel Defense &bull; Formal Exhibit Presentation</span>
+      </div>
+      <h1 class="main-title">Part 2: The 4-Minute Comprehensive Walkthrough</h1>
+      <div class="doc-meta">
+        <strong>Structure:</strong> Context &rarr; 4-Stage Operational Lifecycle &rarr; 3 DSS Mathematical Models &rarr; Architecture &amp; ISO 25010 Standards
+      </div>
+    </header>
+
+    <!-- Phase 1: Context & Partner Problem -->
+    <div class="script-step">
+      <div class="step-header">
+        <span class="step-name">Phase 1: Operational Problem &amp; Industry Partnership</span>
+        <span class="step-time">0:00 &ndash; 0:45</span>
+      </div>
+      <div class="action-pill">&bull; Action: Start on Hero Section &bull; Point to Eloquente Partner Card</div>
+      <div class="dialogue-text">
+        &ldquo;Welcome to the ECS capstone exhibit. I am <strong>[Your Name]</strong> from <strong>Team 4FRONT</strong>. Our project is built for <strong>Eloquente Catering Services</strong>, a full-service catering enterprise in Marikina handling over 100 celebrations and banquets every month.<br><br>
+        Before ECS, Eloquente suffered from <strong>four critical operational bottlenecks</strong>:
+        first, customer booking required lengthy phone calls and manual price calculations;
+        second, finance clerks had to visually inspect screenshots of GCash and bank receipts, creating fraud risk;
+        third, kitchen staff cooked from handwritten paper slips;
+        and fourth, managers ordered perishable meats and produce based on gut feeling, risking both food spoilage and December peak shortages.&rdquo;
+      </div>
+    </div>
+
+    <!-- Phase 2: 4-Stage Lifecycle Tour -->
+    <div class="script-step alt">
+      <div class="step-header">
+        <span class="step-name">Phase 2: Sequential 4-Stage Catering Lifecycle</span>
+        <span class="step-time">0:45 &ndash; 1:45</span>
+      </div>
+      <div class="action-pill">&bull; Action: Click "Roles" on Navbar &bull; Click each role card as you explain</div>
+      <div class="dialogue-text">
+        &ldquo;To eliminate these bottlenecks, ECS orchestrates four synchronized operational roles:<br>
+        &bull; <strong>[Click Stage 1: Client]</strong> Clients customize 5-course banquet menus, receive instant quotations, and lock in bookings with a PayMongo cashless deposit.<br>
+        &bull; <strong>[Click Stage 2: Sales]</strong> Coordinators manage event calendars with automated date blackout limits, schedule food tastings, and dispatch auto-generated ingredient prep checklists to the kitchen.<br>
+        &bull; <strong>[Click Stage 3: Finance]</strong> Webhooks automatically verify GCash, Maya, and card payments. Once verified, the double-entry ledger generates BIR-compliant digital receipts with zero manual data entry.<br>
+        &bull; <strong>[Click Stage 4: Admin]</strong> Executives monitor holiday surcharges, review tamper-proof audit trails recording every action by User ID and IP, and run predictive forecasting models.&rdquo;
+      </div>
+    </div>
+
+    <!-- Phase 3: The 3 Mathematical Models Deep-Dive -->
+    <div class="script-step tech">
+      <div class="step-header">
+        <span class="step-name">Phase 3: Decision Support System (DSS) Live Demonstration</span>
+        <span class="step-time">1:45 &ndash; 3:15</span>
+      </div>
+      <div class="action-pill">&bull; Action: Click "DSS" on Navbar &bull; Interact with the 3 Model Tabs live</div>
+      <div class="dialogue-text">
+        &ldquo;Now let&rsquo;s examine the core analytical innovation &mdash; our <strong>Decision Support System</strong>, which incorporates three distinct models:<br><br>
+
+        <strong>1. Sales Revenue Forecasting:</strong> <em>[Click "Revenue" tab]</em><br>
+        We apply <strong>Simple Linear Regression (SLR): Y = a + b(X)</strong>. As I adjust the horizon slider from +1 to +6 months, the system recalculates projected catering sales based on monthly baseline growth. Notice our empirical validation: an <strong>R&sup2; of 0.892</strong>, an RMSE of &8369;14,250, and an MAE of &8369;11,800 validated on an 80/20 split. This governs inventory procurement to negotiate supplier volume discounts.<br><br>
+
+        <strong>2. Headcount Demand Forecasting:</strong> <em>[Click "Headcount" tab]</em><br>
+        We utilize a <strong>Simple Moving Average (SMA) with seasonal demand smoothing</strong>. Notice that during high-volume December cycles, turnout surges past 2,000 guests. The engine automatically outputs exact banquet staffing ratios at <strong>1 server : 65 guests</strong>, preventing service delays during weddings and corporate galas.<br><br>
+
+        <strong>3. Smart Budget Maximizer:</strong> <em>[Click "Budget DSS" tab]</em><br>
+        This is our client-facing optimization engine. When a customer specifies 100 guests and a &8369;50,000 budget, our <strong>2-Pass Knapsack algorithm</strong> first back-calculates 12% VAT and 10% service charge. Pass 1 guarantees full 5-course feasibility (Starter, Main, Side, Dessert, Drink). Pass 2 greedily upgrades dishes to signature tiers within the remaining food budget &mdash; achieving <strong>&8369;0 overrun risk</strong>.&rdquo;
+      </div>
+    </div>
+
+    <footer class="doc-footer">
+      <span>Team 4FRONT &bull; BSIT Business Analytics &bull; FEU Tech 2026</span>
+      <span>Page 2 of 3 &bull; Comprehensive Walkthrough</span>
+    </footer>
+  </div>
+
+  <!-- =========================================================================
+       PAGE 3: PART 2 (CONT.) & PART 3 - DEFENSE CHEAT SHEET (FAQS)
+       ========================================================================= -->
+  <div class="page">
+    <header class="doc-header">
+      <div class="doc-header-top">
+        <span class="inst-title">FEU Institute of Technology &bull; College of Computer Studies</span>
+        <span class="doc-badge">Defense Readiness &bull; Technical FAQ</span>
+      </div>
+      <h1 class="main-title">Part 3: Architecture &amp; Evaluator Defense Cheat Sheet</h1>
+      <div class="doc-meta">
+        Rapid, evidence-backed answers to the most probable questions asked by capstone panellists.
+      </div>
+    </header>
+
+    <!-- Phase 4: Architecture & Quality -->
+    <div class="script-step">
+      <div class="step-header">
+        <span class="step-name">Phase 4: Architecture, Standards &amp; Closing</span>
+        <span class="step-time">3:15 &ndash; 4:00</span>
+      </div>
+      <div class="action-pill">&bull; Action: Click "Tech" on Navbar &bull; Show ISO Benchmarks</div>
+      <div class="dialogue-text">
+        &ldquo;From an engineering perspective, ECS is built on <strong>Laravel 11, Inertia.js, React 18, Tailwind CSS, PostgreSQL</strong>, and the <strong>PayMongo API</strong>. Under <strong>ISO/IEC 25010</strong> software quality evaluation, our test suite achieved 100% functional suitability coverage, zero payment webhook drop rate, and high usability satisfaction (&ge; 4.7/5.0).<br><br>
+        Thank you for your time, evaluators! We are ready for your questions.&rdquo;
+      </div>
+    </div>
+
+    <!-- Evaluator FAQ Table -->
+    <h2 class="section-title">
+      <span>Evaluator Q&amp;A Cheat Sheet (Top Defense Questions)</span>
+      <span class="section-timing">Memorize these bulletproof answers</span>
+    </h2>
+
+    <table class="qa-table">
+      <thead>
+        <tr>
+          <th>Evaluator Question</th>
+          <th>Bulletproof Response (Say This Plainly)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="qa-q">&ldquo;Why Simple Linear Regression instead of complex Machine Learning like LSTM or Random Forest?&rdquo;</td>
+          <td class="qa-a">
+            <strong>Sample Size &amp; Interpretability:</strong> Catering sales follow clean monthly trendlines governed by seasonal contracts. In small-to-medium enterprise catering, SLR achieved an empirical <strong>R&sup2; score of 0.892</strong> on an 80/20 chronological split. Complex neural networks require thousands of daily data points and risk overfitting on monthly data, while SLR is mathematically transparent and explainable to business owners.
+          </td>
+        </tr>
+        <tr>
+          <td class="qa-q">&ldquo;How do you prevent payment fraud and fake GCash reference numbers?&rdquo;</td>
+          <td class="qa-a">
+            <strong>Server-to-Server Webhook Verification:</strong> Clients do not submit manual transfer slips. Payments route through <strong>PayMongo API</strong>. PayMongo signs every webhook payload with a cryptographic signature header. Our Laravel backend verifies the HMAC signature before marking any invoice as paid, ensuring 100% verified ledger balance.
+          </td>
+        </tr>
+        <tr>
+          <td class="qa-q">&ldquo;What happens if the customer enters an unrealistically low budget in the Maximizer?&rdquo;</td>
+          <td class="qa-a">
+            <strong>Feasibility Constraint Check:</strong> The engine calculates the minimum viable 5-course package (&8369;240 &times; pax &times; 1.22 taxes/fees). If the budget is below this threshold, the algorithm halts gracefully and outputs the exact shortfall required rather than generating an incomplete menu.
+          </td>
+        </tr>
+        <tr>
+          <td class="qa-q">&ldquo;How does the system benefit the kitchen staff specifically?&rdquo;</td>
+          <td class="qa-a">
+            <strong>Automated Kitchen Prep Sheets:</strong> Once a booking is confirmed, ECS aggregates ingredient requirements based on guest headcount and dish recipes, replacing messy handwritten slips with digital, time-stamped culinary prep orders.
+          </td>
+        </tr>
+        <tr>
+          <td class="qa-q">&ldquo;Is this deployed live? Can I test it right now?&rdquo;</td>
+          <td class="qa-a">
+            <strong>Yes!</strong> Scan the QR code on our screen or visit <strong>https://jdadonato.github.io/ECS-EXHIBIT/</strong>. The exhibit is a progressive web app (PWA) with full offline caching and responsive controls for smartphones.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="pro-tip" style="margin-top: 10px;">
+      <strong>Body Language Key:</strong> Stand side-by-side with evaluators rather than behind the table. Let them press the sliders or tap the QR code themselves &mdash; hands-on interaction creates the highest evaluation scores!
+    </div>
+
+    <footer class="doc-footer">
+      <span>Team 4FRONT &bull; BSIT Business Analytics &bull; FEU Tech 2026</span>
+      <span>Page 3 of 3 &bull; Q&amp;A Cheat Sheet</span>
+    </footer>
+  </div>
+
+</body>
+</html>

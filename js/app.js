@@ -307,46 +307,70 @@ function initDssSimulator() {
   let activeModel = 'slr'; // 'slr', 'sma', or 'budget'
   let activePreset = 'steady';
 
-  // Genuine Eloquente Catering Culinary Catalog (From DatabaseSeeder)
+  // Genuine Eloquente Catering Culinary Catalog (46 Dishes from DatabaseSeeder)
   const CATERING_DISH_CATALOG = {
     starter: [
       { id: 's1', name: 'Garden Fresh Salad', cost: 40, tier: 'Classic' },
-      { id: 's2', name: 'Lumpiang Shanghai Bites', cost: 55, tier: 'Popular' },
-      { id: 's3', name: 'Smoked Chicken Tartlets', cost: 70, tier: 'Specialty' },
-      { id: 's4', name: 'Honey Beef Pita Canapes', cost: 90, tier: 'Premium' },
-      { id: 's5', name: 'Shrimp Cocktail Cups', cost: 110, tier: 'Gourmet' }
+      { id: 's2', name: 'Corn Chowder Soup', cost: 45, tier: 'Classic' },
+      { id: 's3', name: 'Bacon & Mushroom Soup', cost: 50, tier: 'Popular' },
+      { id: 's4', name: 'Assorted Canapés', cost: 55, tier: 'Popular' },
+      { id: 's5', name: 'Lumpiang Shanghai', cost: 70, tier: 'Specialty' },
+      { id: 's6', name: 'Smoked Chicken Tartlets', cost: 85, tier: 'Specialty' },
+      { id: 's7', name: 'Honey Beef Pita Canapes', cost: 100, tier: 'Signature' },
+      { id: 's8', name: 'Shrimp Cocktail Cups', cost: 120, tier: 'Signature' },
+      { id: 's9', name: 'Baked Salmon Crostini', cost: 140, tier: 'Gourmet' },
+      { id: 's10', name: 'Artisan Charcuterie Platter', cost: 165, tier: 'Executive' }
     ],
     main: [
-      { id: 'm1', name: 'Herb Roasted Chicken', cost: 110, tier: 'Classic' },
-      { id: 'm2', name: 'Pork Medallions w/ Gravy', cost: 130, tier: 'Classic' },
-      { id: 'm3', name: 'Beef Sirloin Thick Mushroom', cost: 170, tier: 'Popular' },
-      { id: 'm4', name: 'Baked Salmon Florentine', cost: 200, tier: 'Signature' },
-      { id: 'm5', name: 'Roast Beef Tenderloin Steak', cost: 250, tier: 'Gourmet' }
+      { id: 'm1', name: 'Honey Cured Pork Belly', cost: 85, tier: 'Classic' },
+      { id: 'm2', name: 'Sweet & Sour Fish Fillet', cost: 105, tier: 'Classic' },
+      { id: 'm3', name: 'Herb Roasted Chicken', cost: 125, tier: 'Popular' },
+      { id: 'm4', name: 'Pork Medallions w/ Gravy', cost: 145, tier: 'Popular' },
+      { id: 'm5', name: 'Fish Tempura w/ Salsa', cost: 165, tier: 'Popular' },
+      { id: 'm6', name: 'Beef Sirloin Mushroom Sauce', cost: 190, tier: 'Specialty' },
+      { id: 'm7', name: 'Beef Garlic Salpicao', cost: 220, tier: 'Specialty' },
+      { id: 'm8', name: 'Braised Beef in Red Wine', cost: 250, tier: 'Signature' },
+      { id: 'm9', name: 'Baked Salmon Florentine', cost: 290, tier: 'Signature' },
+      { id: 'm10', name: 'Roast Beef Tenderloin', cost: 340, tier: 'Gourmet' },
+      { id: 'm11', name: 'Slow-Roasted US Angus Ribeye', cost: 400, tier: 'Gourmet' },
+      { id: 'm12', name: 'Prime Tenderloin Medallions', cost: 460, tier: 'Executive' }
     ],
     side: [
-      { id: 'd1', name: 'Garlic Butter Steamed Rice', cost: 35, tier: 'Classic' },
-      { id: 'd2', name: 'Herbed Mashed Potato', cost: 45, tier: 'Popular' },
-      { id: 'd3', name: 'Buttered Garden Vegetables', cost: 50, tier: 'Popular' },
-      { id: 'd4', name: 'Creamy Potato Gratin', cost: 65, tier: 'Signature' }
+      { id: 'd1', name: 'Steamed Jasmine Rice', cost: 25, tier: 'Classic' },
+      { id: 'd2', name: 'Four Seasons Vegetables', cost: 35, tier: 'Classic' },
+      { id: 'd3', name: 'Herbed Mashed Potato', cost: 45, tier: 'Popular' },
+      { id: 'd4', name: 'Broccoli Mushroom Casserole', cost: 60, tier: 'Popular' },
+      { id: 'd5', name: 'Cheesy Buttered Potato Marble', cost: 75, tier: 'Specialty' },
+      { id: 'd6', name: 'Creamy Potato Gratin', cost: 90, tier: 'Signature' },
+      { id: 'd7', name: 'Baked Beef Pasta Pomodoro', cost: 110, tier: 'Signature' },
+      { id: 'd8', name: 'Truffle Mushroom Risotto', cost: 135, tier: 'Executive' }
     ],
     dessert: [
-      { id: 'e1', name: 'Pandan Jelly w/ Nata', cost: 30, tier: 'Classic' },
-      { id: 'e2', name: 'Mango Panna Cotta Cups', cost: 45, tier: 'Popular' },
-      { id: 'e3', name: 'Mini Blueberry Cheesecake', cost: 55, tier: 'Signature' },
-      { id: 'e4', name: 'Belgian Chocolate Mousse', cost: 65, tier: 'Gourmet' }
+      { id: 'e1', name: 'Coffee Jello', cost: 30, tier: 'Classic' },
+      { id: 'e2', name: 'Brownies & Butterscotch', cost: 35, tier: 'Classic' },
+      { id: 'e3', name: 'Pandan Jelly w/ Nata', cost: 40, tier: 'Popular' },
+      { id: 'e4', name: 'Mango Tapioca Cups', cost: 50, tier: 'Popular' },
+      { id: 'e5', name: 'Creamy Buko Lychee', cost: 60, tier: 'Specialty' },
+      { id: 'e6', name: 'Mango Panna Cotta', cost: 75, tier: 'Specialty' },
+      { id: 'e7', name: 'Mini Blueberry Cheesecake', cost: 90, tier: 'Signature' },
+      { id: 'e8', name: 'Belgian Chocolate Mousse', cost: 105, tier: 'Gourmet' },
+      { id: 'e9', name: 'Strawberry Pavlova Parfait', cost: 120, tier: 'Executive' }
     ],
     drink: [
-      { id: 'k1', name: 'Calamansi Cooler', cost: 25, tier: 'Classic' },
-      { id: 'k2', name: 'Cucumber Lemonade', cost: 30, tier: 'Popular' },
-      { id: 'k3', name: 'House Blend Iced Tea (Refillable)', cost: 35, tier: 'Signature' },
-      { id: 'k4', name: 'Four Seasons Punch Bar', cost: 45, tier: 'Premium' }
+      { id: 'k1', name: 'Bottomless Iced Tea', cost: 25, tier: 'Classic' },
+      { id: 'k2', name: 'Calamansi Cooler', cost: 30, tier: 'Classic' },
+      { id: 'k3', name: 'Red Tea / Orange Cooler', cost: 35, tier: 'Popular' },
+      { id: 'k4', name: 'Cucumber Herb Lemonade', cost: 45, tier: 'Popular' },
+      { id: 'k5', name: 'Four Seasons Punch Bar', cost: 60, tier: 'Signature' },
+      { id: 'k6', name: 'Brewed Coffee & Tea Station', cost: 75, tier: 'Signature' },
+      { id: 'k7', name: 'Artisan Espresso & Mocktail Bar', cost: 95, tier: 'Executive' }
     ]
   };
 
-  // Real 2-Pass Knapsack Constraint Optimization Algorithm (from MenuBuilder.jsx)
+  // Real Multi-Pass Knapsack Constraint Optimization Algorithm (from MenuBuilder.jsx)
   function runBudgetMaximizer(targetBudget, pax) {
     const feeMultiplier = 1.22; // 12% VAT + 10% Service Charge
-    const minFoodPerHead = 40 + 110 + 35 + 30 + 25; // 240
+    const minFoodPerHead = 40 + 85 + 25 + 30 + 25; // 205 (Classic base)
     const minRequiredGross = Math.ceil(minFoodPerHead * pax * feeMultiplier);
 
     if (targetBudget < minRequiredGross) {
@@ -372,7 +396,8 @@ function initDssSimulator() {
 
     let currentFoodPerHead = Object.values(selectedDishes).reduce((sum, d) => sum + d.cost, 0);
 
-    // Pass 2: Greedily upgrade dishes to highest tier that fits in remaining food allowance
+    // Pass 2: Iteratively cycle through categories upgrading 1 tier at a time
+    // Balances center-plate mains first, then starters, desserts, sides, and drinks
     const upgradeOrder = ['main', 'starter', 'dessert', 'side', 'drink'];
     let improved = true;
 
@@ -383,17 +408,31 @@ function initDssSimulator() {
         const catalog = CATERING_DISH_CATALOG[cat];
         const currentIdx = catalog.findIndex(d => d.id === currentDish.id);
         
-        for (let nextIdx = catalog.length - 1; nextIdx > currentIdx; nextIdx--) {
-          const candidate = catalog[nextIdx];
-          const costDiffPerHead = candidate.cost - currentDish.cost;
-          const newTotalFoodCost = (currentFoodPerHead + costDiffPerHead) * pax;
-          
-          if (newTotalFoodCost <= netFoodBudget) {
+        if (currentIdx < catalog.length - 1) {
+          const candidate = catalog[currentIdx + 1];
+          const costDiff = candidate.cost - currentDish.cost;
+          if ((currentFoodPerHead + costDiff) * pax <= netFoodBudget) {
             selectedDishes[cat] = candidate;
-            currentFoodPerHead += costDiffPerHead;
+            currentFoodPerHead += costDiff;
             improved = true;
-            break;
           }
+        }
+      }
+    }
+
+    // Pass 3: Greedy polish — leap to highest feasible dish for any remaining allowance
+    for (const cat of upgradeOrder) {
+      const currentDish = selectedDishes[cat];
+      const catalog = CATERING_DISH_CATALOG[cat];
+      const currentIdx = catalog.findIndex(d => d.id === currentDish.id);
+      
+      for (let nextIdx = catalog.length - 1; nextIdx > currentIdx; nextIdx--) {
+        const candidate = catalog[nextIdx];
+        const costDiff = candidate.cost - currentDish.cost;
+        if ((currentFoodPerHead + costDiff) * pax <= netFoodBudget) {
+          selectedDishes[cat] = candidate;
+          currentFoodPerHead += costDiff;
+          break;
         }
       }
     }
@@ -425,17 +464,17 @@ function initDssSimulator() {
     lean: {
       slr: { horizon: 1, baseline: 300000 },
       sma: { horizon: 1, baseline: 650 },
-      budget: { horizon: 50, baseline: 45000 }
+      budget: { horizon: 50, baseline: 25000 }
     },
     steady: {
       slr: { horizon: 3, baseline: 450000 },
       sma: { horizon: 3, baseline: 1200 },
-      budget: { horizon: 100, baseline: 85000 }
+      budget: { horizon: 100, baseline: 60000 }
     },
     peak: {
       slr: { horizon: 6, baseline: 750000 },
       sma: { horizon: 6, baseline: 2400 },
-      budget: { horizon: 180, baseline: 150000 }
+      budget: { horizon: 180, baseline: 120000 }
     }
   };
 
@@ -542,7 +581,26 @@ function initDssSimulator() {
       // Smart Budget Maximizer Model (Customer Decision Support System)
       if (menuDisplayEl) menuDisplayEl.style.display = 'block';
       const pax = horizon;
-      const targetBudget = baseline;
+
+      // Dynamic Hard Clamp: Slider range strictly bound to real catalog limits (₱205 - ₱975/head net)
+      const minViableBudget = Math.ceil(205 * pax * 1.22);
+      const peakGourmetBudget = Math.round(975 * pax * 1.22);
+
+      baselineSlider.min = minViableBudget;
+      baselineSlider.max = peakGourmetBudget;
+      baselineSlider.step = 500;
+      if (scaleMinEl) scaleMinEl.textContent = `₱${minViableBudget.toLocaleString()}`;
+      if (scaleMaxEl) scaleMaxEl.textContent = `₱${peakGourmetBudget.toLocaleString()} (Max)`;
+
+      let targetBudget = baseline;
+      if (targetBudget > peakGourmetBudget) {
+        targetBudget = peakGourmetBudget;
+        baselineSlider.value = peakGourmetBudget;
+      } else if (targetBudget < minViableBudget) {
+        targetBudget = minViableBudget;
+        baselineSlider.value = minViableBudget;
+      }
+
       horizonValBadge.textContent = `${pax} Pax`;
       baselineValBadge.textContent = `₱${targetBudget.toLocaleString()}`;
 
@@ -553,16 +611,23 @@ function initDssSimulator() {
 
       if (result.success) {
         projectedValEl.textContent = `₱${result.finalQuote.toLocaleString()}`;
-        formulaChipEl.textContent = `Food: ₱${result.totalFoodCost.toLocaleString()} (₱${result.perHeadAllowance}/pax) + VAT (12%) + Svc (10%)`;
         
         if (meaningNoteEl) {
-          meaningNoteEl.textContent = `For ${pax} guests, the 2-pass knapsack algorithm generated a complete 5-course banquet spread utilizing ${result.utilizationPct}% of the ₱${targetBudget.toLocaleString()} budget with zero overrun risk.`;
+          meaningNoteEl.textContent = `For ${pax} guests, the multi-pass knapsack algorithm iteratively upgraded each course to assemble a balanced banquet utilizing ${result.utilizationPct}% of the ₱${targetBudget.toLocaleString()} budget with zero overrun risk.`;
         }
 
         if (growthDeltaEl) growthDeltaEl.textContent = `${result.utilizationPct}% Fit`;
-        if (growthDeltaPctEl) growthDeltaPctEl.textContent = `₱${result.varianceBuffer.toLocaleString()} buffer remaining`;
+        if (growthDeltaPctEl) growthDeltaPctEl.textContent = `₱${result.varianceBuffer.toLocaleString()} buffer`;
         if (capacityTargetEl) capacityTargetEl.textContent = '5 Courses';
-        if (actionNoteEl) actionNoteEl.textContent = 'Knapsack Pass 1 & 2 verified: Full 5-course banquet spread guaranteed without exceeding budget.';
+        
+        const isMaxTier = result.perHeadAllowance >= 975 || targetBudget >= peakGourmetBudget;
+        if (isMaxTier) {
+          formulaChipEl.innerHTML = `<span class="dss-calc-line">Food: ₱${result.totalFoodCost.toLocaleString()} (₱${result.perHeadAllowance}/pax) + VAT + Svc</span><span class="dss-peak-tag">PEAK CATALOG TIER</span>`;
+          if (actionNoteEl) actionNoteEl.textContent = 'Peak Catalog Tier: All 5 courses are optimized to maximum Gourmet & Executive tiers.';
+        } else {
+          formulaChipEl.innerHTML = `<span class="dss-calc-line">Food: ₱${result.totalFoodCost.toLocaleString()} (₱${result.perHeadAllowance}/pax) + VAT (12%) + Svc (10%)</span>`;
+          if (actionNoteEl) actionNoteEl.textContent = 'Knapsack Pass 1, 2 & 3 verified: Full 5-course banquet spread guaranteed without exceeding budget.';
+        }
 
         metricNum1.textContent = '100%';
         metricSub1.textContent = 'Course Feasibility';
@@ -572,34 +637,37 @@ function initDssSimulator() {
         metricSub3.textContent = 'Overrun Risk';
 
         if (menuDisplayEl) {
+          const tierTag = isMaxTier 
+            ? ' &bull; <span class="dss-peak-tag-inline">PEAK TIER</span>' 
+            : '';
           menuDisplayEl.innerHTML = `
             <div class="dss-menu-header">
               <span class="dss-menu-title">Algorithmically Assembled 5-Course Spread:</span>
-              <span class="dss-menu-pax-tag">${pax} Guests &bull; ₱${result.perHeadAllowance}/pax</span>
+              <span class="dss-menu-pax-tag">${pax} Guests &bull; ₱${result.perHeadAllowance}/pax${tierTag}</span>
             </div>
             <div class="dss-menu-grid">
               <div class="dss-course-chip">
-                <span class="course-cat">🥗 Starter</span>
+                <span class="course-cat">STARTER</span>
                 <span class="course-name">${result.selectedDishes.starter.name}</span>
                 <span class="course-cost">₱${result.selectedDishes.starter.cost}/head</span>
               </div>
               <div class="dss-course-chip highlight">
-                <span class="course-cat">🥩 Main Course</span>
+                <span class="course-cat">MAIN</span>
                 <span class="course-name">${result.selectedDishes.main.name}</span>
                 <span class="course-cost">₱${result.selectedDishes.main.cost}/head</span>
               </div>
               <div class="dss-course-chip">
-                <span class="course-cat">🥔 Side Dish</span>
+                <span class="course-cat">SIDE</span>
                 <span class="course-name">${result.selectedDishes.side.name}</span>
                 <span class="course-cost">₱${result.selectedDishes.side.cost}/head</span>
               </div>
               <div class="dss-course-chip">
-                <span class="course-cat">🍮 Dessert</span>
+                <span class="course-cat">DESSERT</span>
                 <span class="course-name">${result.selectedDishes.dessert.name}</span>
                 <span class="course-cost">₱${result.selectedDishes.dessert.cost}/head</span>
               </div>
               <div class="dss-course-chip">
-                <span class="course-cat">🍹 Drink</span>
+                <span class="course-cat">DRINK</span>
                 <span class="course-name">${result.selectedDishes.drink.name}</span>
                 <span class="course-cost">₱${result.selectedDishes.drink.cost}/head</span>
               </div>
@@ -694,13 +762,16 @@ function initDssSimulator() {
       if (horizonMinEl) horizonMinEl.textContent = '30 Pax (Intimate)';
       if (horizonMaxEl) horizonMaxEl.textContent = '250 Pax (Banquet)';
 
-      baselineSlider.min = 35000;
-      baselineSlider.max = 250000;
-      baselineSlider.step = 5000;
+      const currentPax = parseInt(horizonSlider.value, 10) || 100;
+      const minViable = Math.ceil(205 * currentPax * 1.22);
+      const maxViable = Math.round(975 * currentPax * 1.22);
+      baselineSlider.min = minViable;
+      baselineSlider.max = maxViable;
+      baselineSlider.step = 500;
       baselineLabelEl.textContent = 'Target Client Budget';
       if (baselineHintEl) baselineHintEl.textContent = 'Maximum customer financial limit';
-      if (scaleMinEl) scaleMinEl.textContent = '₱35,000';
-      if (scaleMaxEl) scaleMaxEl.textContent = '₱250,000';
+      if (scaleMinEl) scaleMinEl.textContent = `₱${minViable.toLocaleString()}`;
+      if (scaleMaxEl) scaleMaxEl.textContent = `₱${maxViable.toLocaleString()} (Max)`;
     }
 
     // Dynamic preset button labels for Budget vs Forecasting models
@@ -1090,9 +1161,8 @@ function initGadgetScrollReveals() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
-      } else {
-        // Move out when scrolling past or away (bidirectional gadget showcase effect)
-        entry.target.classList.remove('is-visible');
+        // Once visible, lock in place permanently to prevent infinite scroll oscillation loops
+        revealObserver.unobserve(entry.target);
       }
     });
   }, observerOptions);

@@ -1536,11 +1536,46 @@ a {
   font-size: 0.75rem;
   background: var(--bg-ivory-warm);
   border: 1px solid var(--border-brand);
-  padding: 5px 12px;
-  border-radius: var(--radius-full);
-  display: inline-block;
+  padding: 6px 14px;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
   color: var(--text-dark);
   margin-bottom: 8px;
+  line-height: 1.35;
+  text-align: center;
+  max-width: 100%;
+}
+
+.dss-formula-badge .dss-calc-line {
+  display: block;
+}
+
+.dss-peak-tag {
+  display: inline-block;
+  color: #92400e;
+  background: #fef08a;
+  border: 1px solid #fde047;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.dss-peak-tag-inline {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 0.60rem;
+  white-space: nowrap;
 }
 
 .dss-meaning-text {
@@ -1597,7 +1632,7 @@ a {
 
 .dss-course-chip {
   display: grid;
-  grid-template-columns: 95px 1fr auto;
+  grid-template-columns: 62px 1fr auto;
   align-items: center;
   gap: 8px;
   background: #ffffff;
@@ -1615,8 +1650,9 @@ a {
 }
 
 .dss-course-chip .course-cat {
-  font-size: 0.64rem;
+  font-size: 0.62rem;
   font-weight: 800;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--text-muted);
   white-space: nowrap;
@@ -1635,6 +1671,7 @@ a {
   font-weight: 800;
   color: var(--ecs-red);
   white-space: nowrap;
+  text-align: right;
 }
 
 /* Constraint Shortfall Alert */
@@ -1837,8 +1874,22 @@ a {
 
   .dss-formula-badge {
     font-size: 0.68rem;
-    padding: 2px 8px;
+    padding: 4px 10px;
     margin-bottom: 6px;
+    border-radius: var(--radius-md);
+    line-height: 1.35;
+    text-align: center;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    max-width: 100%;
+  }
+
+  .dss-peak-tag {
+    font-size: 0.58rem;
+    padding: 1px 6px;
   }
 
   .dss-menu-display {
@@ -1867,12 +1918,14 @@ a {
   .dss-course-chip {
     padding: 3px 6px;
     font-size: 0.68rem;
-    grid-template-columns: 78px 1fr auto;
-    gap: 4px;
+    grid-template-columns: 50px 1fr auto;
+    gap: 6px;
   }
 
   .dss-course-chip .course-cat {
     font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
   }
 
   .dss-course-chip .course-name {
@@ -1881,6 +1934,7 @@ a {
 
   .dss-course-chip .course-cost {
     font-size: 0.64rem;
+    text-align: right;
   }
 
   .dss-budget-warning {

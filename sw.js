@@ -3,12 +3,12 @@
  * Pre-caches exhibit assets for resilient offline exhibition booth demos.
  */
 
-const CACHE_NAME = 'ecs-exhibit-v7';
+const CACHE_NAME = 'ecs-exhibit-v15';
 const PRECACHE_URLS = [
   './',
   './index.html',
-  './css/style.css?v=2.8',
-  './js/app.js?v=2.8',
+  './css/style.css?v=3.6',
+  './js/app.js?v=3.6',
   './manifest.json',
   './assets/favicon.svg',
   './assets/favicon.png',
