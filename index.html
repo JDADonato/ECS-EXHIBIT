@@ -24,7 +24,7 @@
   </script>
 
   <!-- Minimalist Stylesheet based on actual Eloquente Landing Page -->
-  <link rel="stylesheet" href="css/style.css?v=2.7">
+  <link rel="stylesheet" href="css/style.css?v=2.8">
 </head>
 <body>
 
@@ -363,28 +363,46 @@
         <div class="dss-model-selector gadget-reveal-scale" data-stagger role="tablist" aria-label="Decision Support Models">
           <button type="button" class="dss-model-card active" data-model="slr" role="tab" aria-selected="true" id="dss-tab-slr">
             <div class="dss-model-header">
-              <span class="dss-model-tag">Model 1 &bull; Regression</span>
+              <span class="dss-model-tag">
+                <span class="dss-tag-full">Model 1 &bull; Regression</span>
+                <span class="dss-tag-short">Model 1 &bull; SLR</span>
+              </span>
               <kbd class="key-hint" title="Press R on keyboard">R</kbd>
             </div>
-            <div class="dss-model-title">Sales Revenue</div>
+            <div class="dss-model-title">
+              <span class="dss-title-full">Sales Revenue</span>
+              <span class="dss-title-short">Revenue</span>
+            </div>
             <p class="dss-model-desc">Simple Linear Regression (SLR) tracking catering sales growth.</p>
           </button>
 
           <button type="button" class="dss-model-card" data-model="sma" role="tab" aria-selected="false" id="dss-tab-sma">
             <div class="dss-model-header">
-              <span class="dss-model-tag">Model 2 &bull; Moving Avg</span>
+              <span class="dss-model-tag">
+                <span class="dss-tag-full">Model 2 &bull; Moving Avg</span>
+                <span class="dss-tag-short">Model 2 &bull; SMA</span>
+              </span>
               <kbd class="key-hint" title="Press M on keyboard">M</kbd>
             </div>
-            <div class="dss-model-title">Guest Headcount</div>
+            <div class="dss-model-title">
+              <span class="dss-title-full">Guest Headcount</span>
+              <span class="dss-title-short">Headcount</span>
+            </div>
             <p class="dss-model-desc">Simple Moving Average (SMA) smoothing guest demand.</p>
           </button>
 
           <button type="button" class="dss-model-card" data-model="budget" role="tab" aria-selected="false" id="dss-tab-budget">
             <div class="dss-model-header">
-              <span class="dss-model-tag">Model 3 &bull; Customer DSS</span>
+              <span class="dss-model-tag">
+                <span class="dss-tag-full">Model 3 &bull; Customer DSS</span>
+                <span class="dss-tag-short">Model 3 &bull; DSS</span>
+              </span>
               <kbd class="key-hint" title="Press B on keyboard">B</kbd>
             </div>
-            <div class="dss-model-title">Budget Maximizer</div>
+            <div class="dss-model-title">
+              <span class="dss-title-full">Budget Maximizer</span>
+              <span class="dss-title-short">Budget DSS</span>
+            </div>
             <p class="dss-model-desc">2-Pass Knapsack algorithm assembling complete 5-course banquet menus.</p>
           </button>
         </div>
@@ -1092,6 +1110,6 @@
     </div>
   </div>
 
-  <script src="js/app.js?v=2.7"></script>
+  <script src="js/app.js?v=2.8"></script>
 </body>
 </html>
