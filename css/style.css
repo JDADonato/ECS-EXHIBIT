@@ -67,6 +67,7 @@ html {
   background-color: var(--bg-white);
   color: var(--text-dark);
   font-family: var(--font-sans);
+  overflow-x: hidden;
 }
 
 body {
@@ -77,6 +78,7 @@ body {
   -webkit-font-smoothing: antialiased;
   padding-bottom: calc(var(--dock-height) + env(safe-area-inset-bottom, 16px));
   margin: 0;
+  overflow-x: hidden;
 }
 
 /* Clean Minimal Scrollbar */
@@ -3071,6 +3073,62 @@ a {
   line-height: 1.42;
 }
 
+@media (max-width: 680px) {
+  .modal-overlay {
+    padding: 8px;
+  }
+
+  .modal-content-handout {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 8px;
+    max-height: 96vh;
+    border-radius: 8px;
+  }
+
+  .evaluator-handout-doc {
+    padding: 14px 10px;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 540px) {
+  .modal-top-handout {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .modal-handout-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .doc-header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .doc-badge-pill {
+    align-self: flex-start;
+  }
+
+  .doc-main-title {
+    font-size: 1.05rem;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .btn-header-share,
+  .btn-header-print {
+    padding: 6px 10px;
+    font-size: 0.70rem;
+  }
+}
+
 .doc-header {
   border-bottom: 2.5px solid #720101;
   padding-bottom: 8px;
@@ -3248,6 +3306,17 @@ a {
   }
 }
 
+@media (max-width: 500px) {
+  .doc-stages-grid {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .doc-stage-name {
+    white-space: normal;
+  }
+}
+
 .doc-stage-card {
   background: #ffffff;
   border: 1px solid #cbd5e1;
@@ -3286,12 +3355,19 @@ a {
   text-align: left;
 }
 
-/* Full Width DSS Formulations Table */
+/* Full Width DSS Formulations Table & Scroll Container */
+.doc-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 5px;
+}
+
 .doc-dss-table {
   width: 100%;
+  min-width: 540px;
   border-collapse: collapse;
   font-size: 0.68rem;
-  margin-top: 5px;
 }
 
 .doc-dss-table th {

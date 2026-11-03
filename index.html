@@ -13,10 +13,18 @@
   <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64x64.png">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-  <link rel="manifest" href="manifest.json">
+  <!-- Web App Manifest (Injected dynamically on HTTP/S to prevent CORS block on local file://) -->
+  <script>
+    if (window.location.protocol.startsWith('http')) {
+      const manifestLink = document.createElement('link');
+      manifestLink.rel = 'manifest';
+      manifestLink.href = 'manifest.json';
+      document.head.appendChild(manifestLink);
+    }
+  </script>
 
   <!-- Minimalist Stylesheet based on actual Eloquente Landing Page -->
-  <link rel="stylesheet" href="css/style.css?v=2.6">
+  <link rel="stylesheet" href="css/style.css?v=2.7">
 </head>
 <body>
 
@@ -973,59 +981,61 @@
         <!-- Block 3: Full-Width DSS Mathematical Formulations Table -->
         <div class="doc-section doc-full-section">
           <h2 class="doc-sec-title">4. Decision Support System (DSS) Mathematical Formulations</h2>
-          <table class="doc-dss-table">
-            <thead>
-              <tr>
-                <th style="width: 25%;">Operational Model</th>
-                <th style="width: 37%;">Mathematical Formulation</th>
-                <th style="width: 38%;">Empirical Validation &amp; Impact</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <strong class="dss-row-title">Model 1: Sales Revenue</strong>
-                  <span class="dss-row-sub">Executive Horizon Forecasting</span>
-                </td>
-                <td>
-                  <div class="dss-formula-line"><code>Y = a + b(X)</code></div>
-                  <span class="dss-formula-desc">Simple Linear Regression (SLR): Monthly trend tracking catering sales growth.</span>
-                </td>
-                <td>
-                  <span class="dss-impact-stat"><strong>R&sup2; = 0.892</strong> &bull; RMSE = &#8369;14,250 &bull; MAE = &#8369;11,800</span>
-                  <span class="dss-impact-note">Validated on 80/20 chronological split. Governs quarterly purchasing.</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <strong class="dss-row-title">Model 2: Headcount Demand</strong>
-                  <span class="dss-row-sub">Operations Staffing &amp; Kitchen</span>
-                </td>
-                <td>
-                  <div class="dss-formula-line"><code>SMA = (&Sigma; Monthly Guests) / k</code></div>
-                  <span class="dss-formula-desc">Simple Moving Average (SMA): 3-month rolling window with seasonal smoothing.</span>
-                </td>
-                <td>
-                  <span class="dss-impact-stat">Banquet Crew Staffing Ratio: <strong>1 server : 65 guests</strong></span>
-                  <span class="dss-impact-note">Prevents service bottlenecks during high-volume December cycles.</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <strong class="dss-row-title">Model 3: Budget Maximizer</strong>
-                  <span class="dss-row-sub">Customer Decision Support System</span>
-                </td>
-                <td>
-                  <div class="dss-formula-line"><code>Net = (Target &minus; Surcharges) / 1.22</code></div>
-                  <span class="dss-formula-desc">2-Pass Knapsack Solver: Back-calculates 12% VAT + 10% Service Fee from budget.</span>
-                </td>
-                <td>
-                  <span class="dss-impact-stat">100% Course Feasibility Guarantee &bull; <strong>&#8369;0 Overrun Risk</strong></span>
-                  <span class="dss-impact-note">Assembles optimal 5-course banquet with dynamic buffer management.</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="doc-table-scroll">
+            <table class="doc-dss-table">
+              <thead>
+                <tr>
+                  <th style="width: 25%;">Operational Model</th>
+                  <th style="width: 37%;">Mathematical Formulation</th>
+                  <th style="width: 38%;">Empirical Validation &amp; Impact</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <strong class="dss-row-title">Model 1: Sales Revenue</strong>
+                    <span class="dss-row-sub">Executive Horizon Forecasting</span>
+                  </td>
+                  <td>
+                    <div class="dss-formula-line"><code>Y = a + b(X)</code></div>
+                    <span class="dss-formula-desc">Simple Linear Regression (SLR): Monthly trend tracking catering sales growth.</span>
+                  </td>
+                  <td>
+                    <span class="dss-impact-stat"><strong>R&sup2; = 0.892</strong> &bull; RMSE = &#8369;14,250 &bull; MAE = &#8369;11,800</span>
+                    <span class="dss-impact-note">Validated on 80/20 chronological split. Governs quarterly purchasing.</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong class="dss-row-title">Model 2: Headcount Demand</strong>
+                    <span class="dss-row-sub">Operations Staffing &amp; Kitchen</span>
+                  </td>
+                  <td>
+                    <div class="dss-formula-line"><code>SMA = (&Sigma; Monthly Guests) / k</code></div>
+                    <span class="dss-formula-desc">Simple Moving Average (SMA): 3-month rolling window with seasonal smoothing.</span>
+                  </td>
+                  <td>
+                    <span class="dss-impact-stat">Banquet Crew Staffing Ratio: <strong>1 server : 65 guests</strong></span>
+                    <span class="dss-impact-note">Prevents service bottlenecks during high-volume December cycles.</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong class="dss-row-title">Model 3: Budget Maximizer</strong>
+                    <span class="dss-row-sub">Customer Decision Support System</span>
+                  </td>
+                  <td>
+                    <div class="dss-formula-line"><code>Net = (Target &minus; Surcharges) / 1.22</code></div>
+                    <span class="dss-formula-desc">2-Pass Knapsack Solver: Back-calculates 12% VAT + 10% Service Fee from budget.</span>
+                  </td>
+                  <td>
+                    <span class="dss-impact-stat">100% Course Feasibility Guarantee &bull; <strong>&#8369;0 Overrun Risk</strong></span>
+                    <span class="dss-impact-note">Assembles optimal 5-course banquet with dynamic buffer management.</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <!-- Document Footer Bar -->
@@ -1082,6 +1092,6 @@
     </div>
   </div>
 
-  <script src="js/app.js?v=2.6"></script>
+  <script src="js/app.js?v=2.7"></script>
 </body>
 </html>

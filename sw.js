@@ -3,12 +3,12 @@
  * Pre-caches exhibit assets for resilient offline exhibition booth demos.
  */
 
-const CACHE_NAME = 'ecs-exhibit-v5';
+const CACHE_NAME = 'ecs-exhibit-v6';
 const PRECACHE_URLS = [
   './',
   './index.html',
-  './css/style.css?v=2.6',
-  './js/app.js?v=2.6',
+  './css/style.css?v=2.7',
+  './js/app.js?v=2.7',
   './manifest.json',
   './assets/favicon.svg',
   './assets/favicon.png',
@@ -46,6 +46,23 @@ self.addEventListener('fetch', (event) => {
   // Only handle GET requests
   if (event.request.method !== 'GET') return;
 
+  let requestUrl;
+  try {
+    requestUrl = new URL(event.request.url);
+  } catch {
+    return;
+  }
+
+  // Bypass non-http/https schemes (e.g. chrome-extension://, moz-extension://, file://, data:)
+  if (requestUrl.protocol !== 'http:' && requestUrl.protocol !== 'https:') {
+    return;
+  }
+
+  // Only handle same-origin requests to avoid interfering with extensions or external requests
+  if (requestUrl.origin !== self.location.origin) {
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
@@ -58,11 +75,11 @@ self.addEventListener('fetch', (event) => {
             return networkResponse;
           }
 
-          // Cache on the fly for subsequent offline visits
+          // Cache on the fly for subsequent offline visits (safely guarded)
           const responseToCache = networkResponse.clone();
           caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, responseToCache);
-          });
+            cache.put(event.request, responseToCache).catch(() => {});
+          }).catch(() => {});
 
           return networkResponse;
         })
