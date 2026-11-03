@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="theme-color" content="#720101">
+  <meta name="description" content="Eloquente Catering System (ECS) — Capstone Exhibit Presentation by Team 4FRONT. Dynamic rule-based automation, PayMongo integration, and Decision Support System forecasting.">
+  <title>ECS — Eloquente Catering System | 4FRONT</title>
+
+  <!-- Favicons / Brand Asset (1:1 Square Emblem) -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64x64.png">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Minimalist Stylesheet based on actual Eloquente Landing Page -->
+  <link rel="stylesheet" href="css/style.css?v=2.6">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       App Header (Matches ClientNavbar.jsx)
+       ========================================================================== -->
+  <header class="app-header">
+    <div class="container header-container">
+      <div class="brand-combo">
+        <img src="assets/4front-logo.png" alt="Team 4FRONT" class="brand-4front">
+        <div class="brand-divider"></div>
+        <img src="assets/ecs-logo.png" alt="Eloquente Catering System" class="brand-ecs">
+      </div>
+
+      <!-- Desktop Navbar Navigation Tabs -->
+      <nav class="header-nav" aria-label="Desktop Navigation">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#roles" class="nav-link">Roles</a>
+        <a href="#dss" class="nav-link">DSS</a>
+        <a href="#innovations" class="nav-link">Tech</a>
+        <a href="#team" class="nav-link">Team</a>
+      </nav>
+
+      <div class="header-actions">
+        <span class="badge-exhibit">FEU Tech Exhibit '26</span>
+        <button type="button" class="btn-header-print" id="btnPrintHandout" aria-label="Print Evaluator Handout" title="Print 1-Page Summary for Evaluators (Press H)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span class="btn-print-text">Handout</span>
+          <kbd class="key-hint" title="Press H on keyboard">H</kbd>
+        </button>
+        <button type="button" class="btn-header-share" id="btnHeaderShare" aria-label="Scan Booth QR Code" title="Open Booth QR Code (Press Q)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          <span>Scan QR</span>
+          <kbd class="key-hint" title="Press Q on keyboard">Q</kbd>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Hero Section (Matches actual LandingPage.jsx Hero)
+       ========================================================================== -->
+  <main>
+    <section class="hero-section" id="hero">
+      <img src="assets/hero-catering.png" alt="Catered reception setup" class="hero-backdrop-img" fetchpriority="high" decoding="async">
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-container">
+        <div class="hero-col-main gadget-reveal">
+          <div class="hero-kicker">FEU TECH CAPSTONE EXHIBIT &bull; BUSINESS ANALYTICS</div>
+
+          <div class="hero-logo-wrap">
+            <img src="assets/ecs-logo-hero.png" alt="Eloquente Catering System" class="hero-system-logo">
+          </div>
+
+          <p class="hero-subtitle">
+            An automated catering management system built for <strong>Eloquente Catering Services</strong>. Clients customize and book celebrations online with instant PayMongo payments, while managers automate kitchen prep sheets and forecast sales with predictive analytics.
+          </p>
+
+          <div class="hero-highlights-row">
+            <span class="hero-highlight-pill">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Online Booking &amp; Custom Menus</span>
+            </span>
+            <span class="hero-highlight-pill">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Instant PayMongo Cashless Payments</span>
+            </span>
+            <span class="hero-highlight-pill">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Predictive Revenue &amp; Pax Forecasting</span>
+            </span>
+          </div>
+
+          <div class="hero-btn-row">
+            <a href="#roles" class="btn-gold">
+              <span>Explore Portals</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="#dss" class="btn-outline-white">
+              <span>Test Forecasting Math</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-col-proof gadget-reveal-right delay-1">
+          <div class="hero-proof-card">
+            <div class="proof-card-header">
+              <span class="proof-kicker">Catering Partner</span>
+              <a href="https://www.facebook.com/eloquentecateringservices" target="_blank" rel="noopener noreferrer" class="proof-fb-badge" title="Visit Eloquente Facebook Page">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                <span>Facebook Page ↗</span>
+              </a>
+            </div>
+
+            <div class="proof-stats-list">
+              <div class="proof-stat-item">
+                <span class="proof-stat-label">Events Catered</span>
+                <span class="proof-stat-val">500+</span>
+              </div>
+              <div class="proof-stat-item">
+                <span class="proof-stat-label">Happy Clients</span>
+                <span class="proof-stat-val">420+</span>
+              </div>
+              <div class="proof-stat-item">
+                <span class="proof-stat-label">Years of Excellence</span>
+                <span class="proof-stat-val">15</span>
+              </div>
+            </div>
+
+            <div class="proof-card-footer">
+              <p>Official catering partner for FEU Tech IT Capstone Project by Team 4FRONT.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Home Marquee (Exact assurance marquee from LandingPage.jsx)
+         ========================================================================== -->
+    <div class="home-marquee" aria-hidden="true">
+      <div class="home-marquee-track">
+        <div class="home-marquee-group">
+          <span class="home-marquee-item"><span class="home-marquee-dot"></span>Staff-reviewed availability</span>
+          <span class="home-marquee-item"><span class="home-marquee-dot"></span>Menu planning with clear package pricing</span>
+          <span class="home-marquee-item"><span class="home-marquee-dot"></span>Secure PayMongo payment tracking</span>
+          <span class="home-marquee-item"><span class="home-marquee-dot"></span>Food tasting scheduling support</span>
+          <span class="home-marquee-item"><span class="home-marquee-dot"></span>Predictive DSS revenue & pax forecasting</span>
+          <span class="home-marquee-item"><span class="home-marquee-dot"></span>Event handoff timeline from booking to event day</span>
+        </div>
+        <div class="home-marquee-group">
+          <span class="home-marquee-item"><span class="home-marquee-dot"></span>Staff-reviewed availability</span>
+          <span class="home-marquee-item"><span class="home-marquee-dot"></span>Menu planning with clear package pricing</span>
+          <span class="home-marquee-item"><span class="home-marquee-dot"></span>Secure PayMongo payment tracking</span>
+          <span class="home-marquee-item"><span class="home-marquee-dot"></span>Food tasting scheduling support</span>
+          <span class="home-marquee-item"><span class="home-marquee-dot"></span>Predictive DSS revenue & pax forecasting</span>
+          <span class="home-marquee-item"><span class="home-marquee-dot"></span>Event handoff timeline from booking to event day</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         The 4-Stage Catering Operations Lifecycle (Interactive Role Tour)
+         ========================================================================== -->
+    <section class="section-wrapper bg-white" id="roles">
+      <div class="container">
+        <div class="section-head gadget-reveal">
+          <span class="kicker">End-to-End Operational Lifecycle</span>
+          <h2 class="section-title">The 4-Stage Catering Operations Lifecycle</h2>
+          <p class="section-desc">
+            Follow a banquet booking through intake, coordination, cashless settlement, and executive intelligence across 4 dedicated workspaces with shared data integrity.
+          </p>
+        </div>
+
+        <!-- 4-Stage Scannable Selector (Visible 4-Card Matrix) -->
+        <div class="role-selector-matrix gadget-reveal-scale" data-stagger role="tablist" aria-label="Catering Lifecycle Stages">
+          <button type="button" class="role-matrix-card active" data-role="client" role="tab" aria-selected="true" id="tab-client">
+            <div class="matrix-card-top">
+              <span class="matrix-role-step">Stage 1 &bull; Intake</span>
+              <kbd class="key-hint" title="Press 1 on keyboard">1</kbd>
+            </div>
+            <div class="matrix-role-name">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Customer Portal</span>
+            </div>
+            <div class="matrix-role-sub">Online Booking &amp; Menus</div>
+          </button>
+
+          <button type="button" class="role-matrix-card" data-role="marketing" role="tab" aria-selected="false" id="tab-marketing">
+            <div class="matrix-card-top">
+              <span class="matrix-role-step">Stage 2 &bull; Triage</span>
+              <kbd class="key-hint" title="Press 2 on keyboard">2</kbd>
+            </div>
+            <div class="matrix-role-name">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>Sales &amp; Marketing</span>
+            </div>
+            <div class="matrix-role-sub">Capacity &amp; Coordination</div>
+          </button>
+
+          <button type="button" class="role-matrix-card" data-role="accounting" role="tab" aria-selected="false" id="tab-accounting">
+            <div class="matrix-card-top">
+              <span class="matrix-role-step">Stage 3 &bull; Settlement</span>
+              <kbd class="key-hint" title="Press 3 on keyboard">3</kbd>
+            </div>
+            <div class="matrix-role-name">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              <span>Finance &amp; Billing</span>
+            </div>
+            <div class="matrix-role-sub">PayMongo &amp; Reconciliation</div>
+          </button>
+
+          <button type="button" class="role-matrix-card" data-role="admin" role="tab" aria-selected="false" id="tab-admin">
+            <div class="matrix-card-top">
+              <span class="matrix-role-step">Stage 4 &bull; Intelligence</span>
+              <kbd class="key-hint" title="Press 4 on keyboard">4</kbd>
+            </div>
+            <div class="matrix-role-name">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Admin &amp; Governance</span>
+            </div>
+            <div class="matrix-role-sub">Predictive DSS &amp; Controls</div>
+          </button>
+        </div>
+
+        <!-- Content Grid (Details + Mockup) -->
+        <div class="role-content-grid">
+          <div class="role-info-col gadget-reveal-left">
+            <span class="role-badge badge-client" id="roleBadge">Stage 1 &bull; Customer Intake</span>
+            <h3 class="role-title" id="roleHeadline">Smart Budget Maximizer &amp; Live Booking</h3>
+            <p class="role-summary" id="roleDesc">
+              Clients input a target budget to receive an algorithmically optimized 5-course menu with transparent pricing, settle cashless deposits via PayMongo, and track kitchen prep in real time.
+            </p>
+            
+            <ul class="role-checklist" id="rolePointsList">
+              <li class="role-check-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span><strong>Smart Budget Maximizer:</strong> 2-pass optimization algorithm reverse-calculates VAT and surcharges to auto-assemble a complete 5-course banquet fitted to client budgets.</span>
+              </li>
+              <li class="role-check-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span><strong>PayMongo Downpayments:</strong> Settle deposits via GCash, Maya, or cards with instant receipts.</span>
+              </li>
+              <li class="role-check-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span><strong>Live Progress Tracker:</strong> Monitor status from kitchen preparation to banquet serving.</span>
+              </li>
+            </ul>
+
+            <!-- Tour Stepper Bar (1-tap navigation between roles) -->
+            <div class="role-tour-bar">
+              <button type="button" class="btn-tour-nav" id="btnPrevRole" disabled aria-label="Previous role">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                <span>Previous</span>
+              </button>
+              <div class="role-tour-status">
+                <span class="tour-status-counter" id="tourRoleCounter">Workspace 1 of 4</span>
+                <span class="tour-status-name" id="tourRoleName">Customer Portal</span>
+              </div>
+              <button type="button" class="btn-tour-nav" id="btnNextRole" aria-label="Next role">
+                <span>Next</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Clean App Mockup Frame (Unified Dashboard Preview) -->
+          <div class="mock-app-frame gadget-reveal-right">
+            <div class="mock-app-header">
+              <span class="mock-app-title" id="mockScreenTitle">Client Dashboard</span>
+              <span class="mock-status-pill" id="mockScreenChip">Event Confirmed</span>
+            </div>
+
+            <div class="mock-stepper-wrap">
+              <div class="mock-card-label" id="mockStepKicker">Event Journey Tracker &bull; Step 4 of 5</div>
+              <div class="mock-timeline" id="mockTimeline">
+                <div class="mock-step-col">
+                  <div class="mock-node done">1</div>
+                  <span class="mock-node-lbl">Inquiry</span>
+                </div>
+                <div class="mock-step-col">
+                  <div class="mock-node done">2</div>
+                  <span class="mock-node-lbl">Review</span>
+                </div>
+                <div class="mock-step-col">
+                  <div class="mock-node done">3</div>
+                  <span class="mock-node-lbl">Deposit</span>
+                </div>
+                <div class="mock-step-col">
+                  <div class="mock-node current">4</div>
+                  <span class="mock-node-lbl">Food Prep</span>
+                </div>
+                <div class="mock-step-col">
+                  <div class="mock-node">5</div>
+                  <span class="mock-node-lbl">Event Day</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mock-data-table" id="mockDataTable">
+              <div class="mock-data-row">
+                <span>Event Name</span>
+                <strong>Garcia-Cruz Wedding Reception</strong>
+              </div>
+              <div class="mock-data-row">
+                <span>Confirmed Date</span>
+                <strong>Dec 18, 2026</strong>
+              </div>
+              <div class="mock-data-row">
+                <span>Guest Count</span>
+                <strong>150 Pax (Grand Buffet)</strong>
+              </div>
+              <div class="mock-data-row">
+                <span>Payment Status</span>
+                <strong>₱85,000 Verified (Deposit Settled)</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Decision Support System (DSS) Simulator
+         ========================================================================== -->
+    <section class="section-wrapper bg-ivory" id="dss">
+      <div class="container">
+        <div class="section-head gadget-reveal">
+          <span class="kicker">Decision Support System Engine</span>
+          <h2 class="section-title">Decision Support System (DSS) Simulator</h2>
+          <p class="section-desc">
+            ECS combines executive forecasting with a client-facing <strong>Smart Budget Maximizer</strong>. Test both operational regression models and the 2-pass menu knapsack algorithm in real time.
+          </p>
+        </div>
+
+        <!-- 3-Model Scannable Selector (Full-Width Responsive 3-Col Grid) -->
+        <div class="dss-model-selector gadget-reveal-scale" data-stagger role="tablist" aria-label="Decision Support Models">
+          <button type="button" class="dss-model-card active" data-model="slr" role="tab" aria-selected="true" id="dss-tab-slr">
+            <div class="dss-model-header">
+              <span class="dss-model-tag">Model 1 &bull; Regression</span>
+              <kbd class="key-hint" title="Press R on keyboard">R</kbd>
+            </div>
+            <div class="dss-model-title">Sales Revenue</div>
+            <p class="dss-model-desc">Simple Linear Regression (SLR) tracking catering sales growth.</p>
+          </button>
+
+          <button type="button" class="dss-model-card" data-model="sma" role="tab" aria-selected="false" id="dss-tab-sma">
+            <div class="dss-model-header">
+              <span class="dss-model-tag">Model 2 &bull; Moving Avg</span>
+              <kbd class="key-hint" title="Press M on keyboard">M</kbd>
+            </div>
+            <div class="dss-model-title">Guest Headcount</div>
+            <p class="dss-model-desc">Simple Moving Average (SMA) smoothing guest demand.</p>
+          </button>
+
+          <button type="button" class="dss-model-card" data-model="budget" role="tab" aria-selected="false" id="dss-tab-budget">
+            <div class="dss-model-header">
+              <span class="dss-model-tag">Model 3 &bull; Customer DSS</span>
+              <kbd class="key-hint" title="Press B on keyboard">B</kbd>
+            </div>
+            <div class="dss-model-title">Budget Maximizer</div>
+            <p class="dss-model-desc">2-Pass Knapsack algorithm assembling complete 5-course banquet menus.</p>
+          </button>
+        </div>
+
+        <div class="dss-workspace-grid">
+          <!-- Left Controls Panel -->
+          <div class="dss-controls-pane gadget-reveal-left">
+            <div class="dss-pane-header">
+              <span class="dss-pane-kicker">Interactive Model Controls</span>
+              <h3 class="dss-pane-title">Adjust Simulation Parameters</h3>
+              <p class="dss-pane-desc">Drag the sliders or select a preset scenario to test how varying lead times and historical volumes affect predictive accuracy.</p>
+            </div>
+
+            <!-- 1-Click Demo Scenario Presets -->
+            <div class="dss-presets-bar">
+              <div class="dss-presets-title-row">
+                <span class="dss-presets-label">Quick Scenario Presets:</span>
+                <div class="dss-presets-actions">
+                  <kbd class="key-hint" title="Press P to cycle presets">P</kbd>
+                  <button type="button" class="dss-reset-btn" id="dssResetBtn" title="Reset to baseline parameters" aria-label="Reset to baseline parameters">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                      <path d="M3 3v5h5"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="dss-preset-btn-group" role="group" aria-label="Forecast Presets">
+                <button type="button" class="dss-preset-btn" data-preset="lean">
+                  <span class="preset-full">Lean Season (+1 Mo)</span>
+                  <span class="preset-short">Lean (+1M)</span>
+                </button>
+                <button type="button" class="dss-preset-btn active" data-preset="steady">
+                  <span class="preset-full">Steady Baseline (+3 Mo)</span>
+                  <span class="preset-short">Steady (+3M)</span>
+                </button>
+                <button type="button" class="dss-preset-btn" data-preset="peak">
+                  <span class="preset-full">December Peak (+6 Mo)</span>
+                  <span class="preset-short">Peak (+6M)</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Slider Card 1: Forecast Horizon -->
+            <div class="dss-slider-card">
+              <div class="dss-slider-header">
+                <div>
+                  <span class="dss-slider-title" id="dssHorizonLabel">Forecast Horizon</span>
+                  <span class="dss-slider-hint" id="dssHorizonHint">Months ahead into future cycles</span>
+                </div>
+                <div class="dss-val-badge" id="dssHorizonVal">+3 Months</div>
+              </div>
+              <div class="dss-slider-track-wrap">
+                <input type="range" min="1" max="6" value="3" class="clean-range-slider" id="dssHorizonSlider" aria-label="Forecast horizon in months">
+              </div>
+              <div class="dss-scale-limits">
+                <span id="dssHorizonMin">+1 Mo (Near-term)</span>
+                <span id="dssHorizonMax">+6 Mo (Long-term)</span>
+              </div>
+            </div>
+
+            <!-- Slider Card 2: Baseline Parameter -->
+            <div class="dss-slider-card">
+              <div class="dss-slider-header">
+                <div>
+                  <span class="dss-slider-title" id="dssBaselineLabel">Baseline Monthly Revenue (X₀)</span>
+                  <span class="dss-slider-hint" id="dssBaselineHint">Average verified monthly revenue</span>
+                </div>
+                <div class="dss-val-badge" id="dssBaselineVal">₱450,000</div>
+              </div>
+              <div class="dss-slider-track-wrap">
+                <input type="range" min="250000" max="850000" step="25000" value="450000" class="clean-range-slider" id="dssBaselineSlider" aria-label="Baseline input value">
+              </div>
+              <div class="dss-scale-limits">
+                <span id="dssScaleMin">₱250,000</span>
+                <span id="dssScaleMax">₱850,000</span>
+              </div>
+            </div>
+
+            <!-- Academic Validation Callout -->
+            <div class="dss-validation-callout">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span><strong>Validated Dataset:</strong> Tested using chronological 80% training and 20% testing splits against historical catering sales.</span>
+            </div>
+          </div>
+
+          <!-- Right Results Board -->
+          <div class="dss-projection-board gadget-reveal-right">
+            <div class="dss-pane-header">
+              <span class="dss-pane-kicker">Predictive Output Engine</span>
+              <h3 class="dss-pane-title" id="dssOutputHeading">Sales Revenue Projection</h3>
+              <p class="dss-pane-desc">Mathematical calculation based on verified historical catering sales.</p>
+            </div>
+
+            <div class="dss-projection-body">
+              <div class="dss-result-label" id="dssOutputLabel">Projected Revenue for Month +3</div>
+              <div class="dss-result-number" id="dssProjectedVal">₱565,500</div>
+              <div class="dss-formula-badge" id="dssFormulaChip">Y = ₱450,000 + (₱38,500 × 3)</div>
+              <p class="dss-meaning-text" id="dssMeaningNote">Expected monthly catering revenue for Month +3 based on historical baseline growth.</p>
+
+              <!-- Dynamic Assembled Menu Spread for Model 3 (Budget Maximizer) -->
+              <div class="dss-menu-display" id="dssMenuDisplay" style="display: none;"></div>
+
+              <!-- Operational Decision Guidance Card -->
+              <div class="dss-impact-card">
+                <div class="dss-impact-header">
+                  <span class="dss-impact-kicker">Operational Decision Guidance</span>
+                  <span class="dss-impact-pill">Inventory &amp; Capacity</span>
+                </div>
+                <div class="dss-impact-grid">
+                  <div class="dss-impact-cell">
+                    <span class="dss-impact-lbl">Projected Growth</span>
+                    <strong class="dss-impact-val" id="dssGrowthDelta">+₱115,500</strong>
+                    <span class="dss-impact-sub" id="dssGrowthDeltaPct">+25.7% from baseline</span>
+                  </div>
+                  <div class="dss-impact-cell">
+                    <span class="dss-impact-lbl">Operations Target</span>
+                    <strong class="dss-impact-val" id="dssCapacityTarget">13 Banquets</strong>
+                    <span class="dss-impact-sub">Event capacity</span>
+                  </div>
+                </div>
+                <p class="dss-impact-note" id="dssActionNote">Action: Procure kitchen bulk stock and allocate chef staffing for Month +3.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empirical Accuracy Verification (Clean Full-Width Historical Test Set Card) -->
+        <div class="dss-accuracy-card gadget-reveal">
+          <div class="dss-accuracy-header">
+            <div>
+              <span class="dss-accuracy-title">Empirical Accuracy Validation (Historical Test Set)</span>
+              <p class="dss-accuracy-subtext">Chronological 80/20 train-test split verifying mathematical precision against audited catering sales.</p>
+            </div>
+            <span class="dss-accuracy-split">80/20 Chronological Split</span>
+          </div>
+          <div class="dss-table-responsive">
+            <table class="dss-accuracy-table">
+              <thead>
+                <tr>
+                  <th>Month</th>
+                  <th>Actual Record</th>
+                  <th id="dssTableHeadModel">SLR Prediction</th>
+                  <th>Variance</th>
+                </tr>
+              </thead>
+              <tbody id="dssAccuracyTableBody">
+                <tr>
+                  <td>Month -2 (Oct)</td>
+                  <td>₱382,000</td>
+                  <td>₱388,500</td>
+                  <td class="text-success">+1.7%</td>
+                </tr>
+                <tr>
+                  <td>Month -1 (Nov)</td>
+                  <td>₱415,000</td>
+                  <td>₱427,000</td>
+                  <td class="text-success">+2.8%</td>
+                </tr>
+                <tr class="row-baseline">
+                  <td>Baseline (Dec)</td>
+                  <td>₱450,000</td>
+                  <td>₱450,000</td>
+                  <td><span class="tag-baseline">0.0% (Base)</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="dss-metrics-strip">
+            <div class="dss-metric-cell">
+              <strong id="dssMetric1">₱14,250</strong>
+              <span id="dssMetricSub1">RMSE Error</span>
+            </div>
+            <div class="dss-metric-cell">
+              <strong id="dssMetric2">₱11,800</strong>
+              <span id="dssMetricSub2">MAE Error</span>
+            </div>
+            <div class="dss-metric-cell">
+              <strong id="dssMetric3">0.892</strong>
+              <span id="dssMetricSub3">R² Score (Good Fit)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         System Highlights (Fluid, Single-Layer Feature Cards)
+         ========================================================================== -->
+    <section class="section-wrapper bg-white" id="innovations">
+      <div class="container">
+        <div class="section-head gadget-reveal">
+          <span class="kicker">Core System Architecture</span>
+          <h2 class="section-title">Engineered for Operational Reliability</h2>
+          <p class="section-desc">
+            Six architectural capabilities that power day-to-day operations at Eloquente Catering Services.
+          </p>
+        </div>
+
+        <div class="innovations-grid" data-stagger>
+          <!-- Feature 1: Smart Budget Maximizer -->
+          <div class="feature-card gadget-reveal">
+            <div class="feature-icon-wrapper">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Smart Budget Maximizer</h3>
+            <p class="feature-text">
+              <strong>Customer Decision Support System.</strong> Dynamic 2-pass knapsack algorithm back-calculates VAT and surcharges to auto-assemble a complete 5-course banquet maximizing client funds.
+            </p>
+            <div class="feature-tags">
+              <span class="feature-tag">Customer DSS</span>
+              <span class="feature-tag">2-Pass Knapsack</span>
+              <span class="feature-tag">Menu Optimization</span>
+            </div>
+            <div style="margin-top: 14px;">
+              <a href="#budget" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 700; color: #a16207; text-decoration: none;">
+                <span>Simulate in DSS Studio &rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Feature 2: PayMongo Digital Gateway -->
+          <div class="feature-card gadget-reveal">
+            <div class="feature-icon-wrapper">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+            </div>
+            <h3 class="feature-title">PayMongo Digital Gateway</h3>
+            <p class="feature-text">
+              <strong>Instant cashless checkout.</strong> Clients pay via GCash, Maya, or credit card. Automatic webhook verification removes manual bank slip checking.
+            </p>
+            <div class="feature-tags">
+              <span class="feature-tag">Webhooks</span>
+              <span class="feature-tag">Idempotency</span>
+              <span class="feature-tag">E-Wallets</span>
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-card gadget-reveal">
+            <div class="feature-icon-wrapper">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Dynamic Pricing Rules</h3>
+            <p class="feature-text">
+              <strong>Zero-code rate changes.</strong> Managers adjust downpayments, minimum guest limits, and holiday surcharges directly from the dashboard.
+            </p>
+            <div class="feature-tags">
+              <span class="feature-tag">Config Engine</span>
+              <span class="feature-tag">Surcharges</span>
+              <span class="feature-tag">Live Rules</span>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-card gadget-reveal">
+            <div class="feature-icon-wrapper">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Audit Trail &amp; Security</h3>
+            <p class="feature-text">
+              <strong>Accountability on every record.</strong> Logs operator IDs, device IPs, and modified attributes to prevent billing disputes and maintain data integrity.
+            </p>
+            <div class="feature-tags">
+              <span class="feature-tag">ISO/IEC 25010</span>
+              <span class="feature-tag">RBAC</span>
+              <span class="feature-tag">Audit Trail</span>
+            </div>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-card gadget-reveal">
+            <div class="feature-icon-wrapper">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+            </div>
+            <h3 class="feature-title">Automated PDF Documents</h3>
+            <p class="feature-text">
+              <strong>Official receipts in one tap.</strong> Compiles BIR-compliant payment invoices, kitchen prep checklists, and crew handoff sheets with Dompdf.
+            </p>
+            <div class="feature-tags">
+              <span class="feature-tag">Dompdf</span>
+              <span class="feature-tag">Official Receipts</span>
+              <span class="feature-tag">Checklists</span>
+            </div>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="feature-card gadget-reveal">
+            <div class="feature-icon-wrapper">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="feature-title">Real-Time WebSockets</h3>
+            <p class="feature-text">
+              <strong>Instant screen updates.</strong> Laravel Reverb broadcasts booking milestone changes and chat messages without requiring page refreshing.
+            </p>
+            <div class="feature-tags">
+              <span class="feature-tag">Laravel Reverb</span>
+              <span class="feature-tag">WebSockets</span>
+              <span class="feature-tag">Live Sync</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Meet Team 4FRONT (Editorial Capstone Authors Section)
+         ========================================================================== -->
+    <section class="section-wrapper bg-ivory" id="team">
+      <div class="container">
+        <div class="section-head gadget-reveal">
+          <span class="kicker">Capstone Research &amp; Development</span>
+          <h2 class="section-title">The Engineering Team</h2>
+          <p class="section-desc">
+            Bachelor of Science in Information Technology, Specialization in Business Analytics &bull; <span class="text-nowrap">FEU Institute of Technology</span>.
+          </p>
+        </div>
+
+        <div class="team-editorial-layout">
+          <!-- Left Column: Portrait Card -->
+          <div class="team-card-profile gadget-reveal-left">
+            <div class="team-photo-wrap">
+              <img src="assets/team-photo-square.png" alt="Team 4FRONT" class="team-portrait-photo" loading="lazy" decoding="async">
+            </div>
+            <div class="team-card-footer">
+              <img src="assets/4front-logo-dark.png" alt="Team 4FRONT" class="team-card-logo" loading="lazy" decoding="async">
+              <span class="team-card-badge">FEU Tech &bull; 2026</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Purpose & Authors Roster -->
+          <div class="team-info-column gadget-reveal-right">
+            <!-- Focused Capstone Purpose (Unified, zero repetition) -->
+            <div class="team-purpose-box">
+              <span class="purpose-kicker">Capstone Project Purpose</span>
+              <p class="purpose-text">
+                Developed in partnership with <strong>Eloquente Catering Services</strong> to modernize catering operations by replacing paper forms and manual estimates with dynamic pricing rules, instant PayMongo reconciliation, and predictive DSS revenue and demand forecasting.
+              </p>
+            </div>
+
+            <!-- Authors Roster Header -->
+            <div class="roster-section-head">
+              <span class="roster-kicker">Project Authors &amp; Researchers</span>
+            </div>
+
+            <!-- Clean 2x2 Author Grid without redundant subtitles -->
+            <div class="team-roster-grid" data-stagger>
+              <div class="roster-item gadget-reveal">
+                <span class="roster-index">01</span>
+                <div class="roster-details">
+                  <strong class="roster-name">John Maverick M. Aquino</strong>
+                  <span class="roster-spec">BSIT Business Analytics</span>
+                </div>
+              </div>
+
+              <div class="roster-item gadget-reveal">
+                <span class="roster-index">02</span>
+                <div class="roster-details">
+                  <strong class="roster-name">Rafael Angelo P. Buscano</strong>
+                  <span class="roster-spec">BSIT Business Analytics</span>
+                </div>
+              </div>
+
+              <div class="roster-item gadget-reveal">
+                <span class="roster-index">03</span>
+                <div class="roster-details">
+                  <strong class="roster-name">John Darev A. Donato</strong>
+                  <span class="roster-spec">BSIT Business Analytics</span>
+                </div>
+              </div>
+
+              <div class="roster-item gadget-reveal">
+                <span class="roster-index">04</span>
+                <div class="roster-details">
+                  <strong class="roster-name">Tyron Jude G. Duran</strong>
+                  <span class="roster-spec">BSIT Business Analytics</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stakeholders & Adviser Strip -->
+            <div class="team-credits-strip">
+              <div class="credit-item">
+                <span class="credit-lbl">Project Adviser</span>
+                <strong class="credit-val">Ms. Geliza Marie I. Alcober</strong>
+              </div>
+              <div class="credit-item">
+                <span class="credit-lbl">Industry Partner</span>
+                <strong class="credit-val">Eloquente Catering Services</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       Site Footer (Matches Footer.jsx)
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container gadget-reveal">
+      <div class="footer-brand-row">
+        <img src="assets/4front-logo.png" alt="4FRONT" style="height: 20px; width: auto; opacity: 0.85;" loading="lazy" decoding="async">
+        <div style="width: 1px; height: 16px; background: rgba(255, 255, 255, 0.2);"></div>
+        <img src="assets/ecs-logo.png" alt="ECS" style="height: 20px; width: auto; opacity: 0.85;" loading="lazy" decoding="async">
+      </div>
+      <p class="footer-copy-text">
+        &copy; 2026 Aquino, Buscano, Donato, and Duran. All Rights Reserved.<br>
+        Eloquente Catering System (ECS) &bull; FEU Institute of Technology Capstone Exhibit.
+      </p>
+      <div style="margin-top: 10px;">
+        <a href="https://www.facebook.com/eloquentecateringservices" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; color: var(--ecs-gold); font-size: 0.78rem; font-weight: 700; opacity: 0.9;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+          <span>Official Facebook: facebook.com/eloquentecateringservices</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Compact Bottom App Dock (Pinned to Screen Bottom)
+       ========================================================================== -->
+  <nav class="bottom-dock" aria-label="Mobile Navigation Dock">
+    <div class="bottom-dock-inner">
+      <a href="#hero" class="dock-btn active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </a>
+      <a href="#roles" class="dock-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>Roles</span>
+      </a>
+      <a href="#dss" class="dock-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        <span>DSS</span>
+      </a>
+      <a href="#innovations" class="dock-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <span>Tech</span>
+      </a>
+      <a href="#team" class="dock-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span>Team</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       Evaluator Handout Modal (1-Page Executive Summary & PDF Printout)
+       ========================================================================== -->
+  <div class="modal-overlay" id="handoutModal" role="dialog" aria-modal="true" aria-labelledby="handoutTitle">
+    <div class="modal-content modal-content-handout">
+      <div class="modal-top modal-top-handout">
+        <div>
+          <h4 class="modal-header-title" id="handoutTitle">Evaluator Handout &bull; Executive Brief</h4>
+          <span class="modal-header-sub">Formatted 1-Page Capstone Summary for Faculty &amp; Industry Judges</span>
+        </div>
+        <div class="modal-handout-actions">
+          <button type="button" class="btn-print-action" id="btnTriggerPrint">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            <span>Print / Save PDF</span>
+          </button>
+          <button type="button" class="modal-close-icon" id="closeHandoutBtn" aria-label="Close modal">&times;</button>
+        </div>
+      </div>
+
+      <!-- Printable 1-Page Document Container -->
+      <div class="evaluator-handout-doc" id="evaluatorHandoutDoc">
+        <!-- Top Institutional Masthead -->
+        <header class="doc-header">
+          <div class="doc-header-top">
+            <div class="doc-org-block">
+              <span class="doc-inst-name">FEU INSTITUTE OF TECHNOLOGY</span>
+              <span class="doc-dept-name">College of Computer Studies &bull; BSIT Business Analytics Specialization</span>
+            </div>
+            <div class="doc-badge-pill">Capstone Research Exhibit &bull; 2026</div>
+          </div>
+          <h1 class="doc-main-title">Eloquente Catering System (ECS) with Decision Support System</h1>
+          <div class="doc-meta-strip">
+            <div class="doc-meta-authors">
+              <strong>Authors:</strong> John Maverick M. Aquino &bull; Rafael Angelo P. Buscano &bull; John Darev A. Donato &bull; Tyron Jude G. Duran
+            </div>
+            <div class="doc-meta-subrow">
+              <span><strong>Adviser:</strong> Ms. Geliza Marie I. Alcober</span>
+              <span class="doc-meta-dot">&bull;</span>
+              <span><strong>Industry Partner:</strong> Eloquente Catering Services</span>
+              <span class="doc-meta-dot">&bull;</span>
+              <span><strong>Core Engine:</strong> Predictive DSS &amp; PayMongo Integration</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Block 1: Problem Context (Left) & Architecture / Standards (Right) -->
+        <div class="doc-top-grid">
+          <div class="doc-card">
+            <h2 class="doc-sec-title">1. Operational Problem &amp; Core Innovation</h2>
+            <p class="doc-sec-text">
+              Traditional catering operations at Eloquente Catering Services suffered from disjointed manual workflows: handwritten booking slips, unverified manual bank transfer checks, phone-based pricing recalculations, and perishable grocery purchasing based on guesswork rather than empirical forecasting.
+            </p>
+            <p class="doc-sec-text">
+              <strong>Engineered Solution:</strong> ECS provides an integrated web platform linking customer intake with automated rule-based pricing, instant PayMongo reconciliation, automated kitchen prep sheets, and predictive analytics forecasting sales and guest turnout with mathematical precision.
+            </p>
+          </div>
+
+          <div class="doc-card">
+            <h2 class="doc-sec-title">2. System Architecture &amp; Quality Benchmarks (ISO/IEC 25010)</h2>
+            <div class="doc-tech-stack-row">
+              <span class="doc-tech-pill">Laravel 11</span>
+              <span class="doc-tech-pill">Inertia.js</span>
+              <span class="doc-tech-pill">React 18</span>
+              <span class="doc-tech-pill">Tailwind CSS</span>
+              <span class="doc-tech-pill">PostgreSQL</span>
+              <span class="doc-tech-pill">PayMongo API</span>
+            </div>
+            <ul class="doc-bullet-list">
+              <li><strong>Functional Suitability:</strong> 100% verified test cases covering dynamic rules, deposits, and kitchen prep sheets.</li>
+              <li><strong>Reliability &amp; Webhooks:</strong> Zero-drop automated payment reconciliation with immutable double-entry ledger.</li>
+              <li><strong>Security &amp; Audit Trail:</strong> Role-Based Access Control (RBAC) with immutable event logging (User ID, IP, and timestamp).</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Block 2: Full-Width 4-Stage Operational Lifecycle Pipeline -->
+        <div class="doc-section doc-full-section">
+          <h2 class="doc-sec-title">3. Sequential 4-Stage Catering Operations Lifecycle</h2>
+          <div class="doc-stages-grid">
+            <div class="doc-stage-card">
+              <div class="doc-stage-hdr">
+                <span class="doc-stage-num">Stage 1</span>
+                <span class="doc-stage-name">Customer Intake</span>
+              </div>
+              <p class="doc-stage-desc">
+                7-step booking engine, <strong>Smart Budget Maximizer</strong>, instant PayMongo cashless deposit, live milestone tracker.
+              </p>
+            </div>
+
+            <div class="doc-stage-card">
+              <div class="doc-stage-hdr">
+                <span class="doc-stage-num">Stage 2</span>
+                <span class="doc-stage-name">Sales Triage</span>
+              </div>
+              <p class="doc-stage-desc">
+                Event capacity thresholds, calendar blackout dates, food tasting coordination, automated kitchen prep checklists.
+              </p>
+            </div>
+
+            <div class="doc-stage-card">
+              <div class="doc-stage-hdr">
+                <span class="doc-stage-num">Stage 3</span>
+                <span class="doc-stage-name">Financial Settlement</span>
+              </div>
+              <p class="doc-stage-desc">
+                Automated webhook verification for GCash, Maya, and cards, BIR-compliant digital receipts, double-entry ledger.
+              </p>
+            </div>
+
+            <div class="doc-stage-card">
+              <div class="doc-stage-hdr">
+                <span class="doc-stage-num">Stage 4</span>
+                <span class="doc-stage-name">Admin Governance</span>
+              </div>
+              <p class="doc-stage-desc">
+                Predictive DSS revenue/demand models, holiday surcharge rule engine, tamper-proof audit trails.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Block 3: Full-Width DSS Mathematical Formulations Table -->
+        <div class="doc-section doc-full-section">
+          <h2 class="doc-sec-title">4. Decision Support System (DSS) Mathematical Formulations</h2>
+          <table class="doc-dss-table">
+            <thead>
+              <tr>
+                <th style="width: 25%;">Operational Model</th>
+                <th style="width: 37%;">Mathematical Formulation</th>
+                <th style="width: 38%;">Empirical Validation &amp; Impact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong class="dss-row-title">Model 1: Sales Revenue</strong>
+                  <span class="dss-row-sub">Executive Horizon Forecasting</span>
+                </td>
+                <td>
+                  <div class="dss-formula-line"><code>Y = a + b(X)</code></div>
+                  <span class="dss-formula-desc">Simple Linear Regression (SLR): Monthly trend tracking catering sales growth.</span>
+                </td>
+                <td>
+                  <span class="dss-impact-stat"><strong>R&sup2; = 0.892</strong> &bull; RMSE = &#8369;14,250 &bull; MAE = &#8369;11,800</span>
+                  <span class="dss-impact-note">Validated on 80/20 chronological split. Governs quarterly purchasing.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong class="dss-row-title">Model 2: Headcount Demand</strong>
+                  <span class="dss-row-sub">Operations Staffing &amp; Kitchen</span>
+                </td>
+                <td>
+                  <div class="dss-formula-line"><code>SMA = (&Sigma; Monthly Guests) / k</code></div>
+                  <span class="dss-formula-desc">Simple Moving Average (SMA): 3-month rolling window with seasonal smoothing.</span>
+                </td>
+                <td>
+                  <span class="dss-impact-stat">Banquet Crew Staffing Ratio: <strong>1 server : 65 guests</strong></span>
+                  <span class="dss-impact-note">Prevents service bottlenecks during high-volume December cycles.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong class="dss-row-title">Model 3: Budget Maximizer</strong>
+                  <span class="dss-row-sub">Customer Decision Support System</span>
+                </td>
+                <td>
+                  <div class="dss-formula-line"><code>Net = (Target &minus; Surcharges) / 1.22</code></div>
+                  <span class="dss-formula-desc">2-Pass Knapsack Solver: Back-calculates 12% VAT + 10% Service Fee from budget.</span>
+                </td>
+                <td>
+                  <span class="dss-impact-stat">100% Course Feasibility Guarantee &bull; <strong>&#8369;0 Overrun Risk</strong></span>
+                  <span class="dss-impact-note">Assembles optimal 5-course banquet with dynamic buffer management.</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Document Footer Bar -->
+        <footer class="doc-footer">
+          <div class="doc-footer-left">
+            <span>Team 4FRONT &bull; Bachelor of Science in Information Technology (Business Analytics) &bull; FEU Tech 2026</span>
+          </div>
+          <div class="doc-footer-right">
+            <span>Industry Partner: Eloquente Catering Services</span>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Clean QR Share Modal
+       ========================================================================== -->
+  <div class="modal-overlay" id="shareModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content" style="max-width: 440px;">
+      <div class="modal-top">
+        <div>
+          <h4 class="modal-header-title" id="modalTitle">Scan to Open on Mobile</h4>
+          <span style="display: block; font-size: 0.72rem; color: var(--text-muted);">Smartphone Exhibition Walkthrough</span>
+        </div>
+        <button type="button" class="modal-close-icon" id="closeModalBtn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="qr-box" id="qrCodeContainer"></div>
+
+      <div style="text-align: center; margin: 8px 0 12px;">
+        <span style="font-size: 0.70rem; color: var(--text-muted); font-weight: 600;">Destination URL:</span><br>
+        <code id="qrTargetDisplay" style="font-size: 0.74rem; font-weight: 700; color: #720101; word-break: break-all;"></code>
+      </div>
+
+      <div id="qrLocalNotice" style="display: none; background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px; padding: 10px 12px; margin-bottom: 12px; text-align: left; font-size: 0.72rem; line-height: 1.4; color: #92400e;">
+        <strong>Notice for Local Testing:</strong> Scanning a local <code>file:///</code> or <code>localhost</code> path will not open on a phone because the phone cannot reach files on your PC. Enter your deployed URL (e.g. GitHub/Vercel) or local Wi-Fi IP below:
+      </div>
+
+      <div class="qr-url-config" style="display: flex; gap: 6px; margin-bottom: 14px;">
+        <input type="text" id="qrCustomUrlInput" class="qr-input" placeholder="https://your-domain.com or LAN IP" style="flex: 1; padding: 8px 10px; font-size: 0.76rem; border: 1.5px solid var(--border-brand); border-radius: 6px; outline: none;">
+        <button type="button" id="qrUpdateBtn" class="btn-gold" style="padding: 8px 12px; font-size: 0.74rem; white-space: nowrap;">Update QR</button>
+      </div>
+
+      <button type="button" class="btn-gold" style="width: 100%; justify-content: center; padding: 11px; margin-top: 4px;" onclick="document.getElementById('shareModal').classList.remove('open'); document.body.style.overflow='';">
+        Done
+      </button>
+
+      <div style="margin-top: 10px; text-align: center;">
+        <button type="button" style="background: none; border: none; color: var(--ecs-gold); font-size: 0.78rem; font-weight: 700; cursor: pointer; text-decoration: underline;" onclick="document.getElementById('shareModal').classList.remove('open'); document.getElementById('handoutModal').classList.add('open');">
+          Open 1-Page Evaluator Brief (Handout) &rarr;
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js?v=2.6"></script>
+</body>
+</html>
